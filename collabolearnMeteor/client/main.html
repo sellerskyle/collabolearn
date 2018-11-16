@@ -3,15 +3,17 @@
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
-
+  <h1>Welcome to Collabolearn!</h1>
+  <!--{{> landing-page}} -->
+  {{> loginButtons}}
   {{> hello}}
   {{> info}}
+
 </body>
 
 <template name="hello">
-  <button>Adam</button>
-    <button>Hock</button>
+  <button>No Weebs Allowed in Collabolearn(does this work?)</button>
+    <button>Click me with your best Høck</button>
   <p>You've pressed the button {{counter}} times.</p>
 </template>
 
@@ -23,4 +25,10 @@
     <li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>
     <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
   </ul>
+</template>
+
+<template name="landing-page">
+  <h1> Welcome to Collabolearn </h1>
+  <button>Log In</button>
+  <button>Sign Up</button>
 </template>
