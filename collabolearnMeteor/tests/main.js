@@ -1,9 +1,9 @@
 import assert from "assert";
 
-describe("collabolearnMeteor", function () {
+describe("simple-todo-blaze", function () {
   it("package.json has correct name", async function () {
     const { name } = await import("../package.json");
-    assert.strictEqual(name, "collabolearnMeteor");
+    assert.strictEqual(name, "simple-todo-blaze");
   });
 
   if (Meteor.isClient) {
