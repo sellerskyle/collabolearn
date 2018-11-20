@@ -1,5 +1,5 @@
 {
-  "name": "collabolearnMeteor",
+  "name": "simple-todo-blaze",
   "private": true,
   "scripts": {
     "start": "meteor run",
