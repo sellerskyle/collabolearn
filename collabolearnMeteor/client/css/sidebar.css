@@ -14,7 +14,7 @@
   display: block;
   margin: 0 auto;
   padding: 0;
-  width: 80px;
+  width: 120px;
 }
 
 .sidebar-left a.company-logo {
@@ -24,7 +24,7 @@
   padding: 10px 0px 0px 0px;
   text-align: center;
   color:  #ffffff;
-  font-size: 30px;
+  font-size: 20px;
   font-weight: 600;
 }
 
