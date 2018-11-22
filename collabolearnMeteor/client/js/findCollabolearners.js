@@ -1,16 +1,16 @@
-Template.profile.rendered = function() {
-	$("#profile-link").addClass('selected');
+Template.findCollabolearners.rendered = function() {
+	$("#findCollabolearners-link").addClass('selected');
 	$("#jokes-link").removeClass('selected');
 	$("#rankings-link").removeClass('selected');
 	$("#search-link").removeClass('selected');
 	$("#login-link").removeClass('selected');
 	$("#userProfile-link").removeClass('selected');
-    $("#findCollabolearners-link").removeClass('selected');
+    $("#profile-link").removeClass('selected');
     $("#connections-link").removeClass('selected');
 
 }
 
-Template.profile.helpers({
+Template.findCollabolearners.helpers({
 	email: function() {
 		if(!Meteor.user()) {
 			Bert.alert("you are not logged in, permission denied", "danger", "growl-top-right");
@@ -57,7 +57,7 @@ Template.profile.helpers({
 
 });
 
-Template.profile.events({
+Template.findCollabolearners.events({
 	"click #delete-joke": function() {
 		Meteor.call("removeJoke", this._id);
 		Bert.alert("Your Joke Was Deleted", "success", "growl-top-right");

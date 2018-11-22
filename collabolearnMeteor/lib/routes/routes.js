@@ -38,4 +38,22 @@ Router.map(function(){
 		path: '/search',
 		template: 'search'
 	});
+
+	//User Profile
+	this.route('userProfile', {
+		path: '/userProfile',
+		template: 'user-profile'
+	});
+
+	// Find Collabolearners
+	this.route('findCollabolearners', {
+		path: '/findCollabolearners',
+		template: 'find-collabolearners'
+	});
+
+	// Connections
+	this.route('connections', {
+		path: '/connections',
+		template: 'connections'
+	});
 });

@@ -1,22 +1,24 @@
-Template.jokes.rendered = function() {
-	$("#jokes-link").addClass('selected');
-	$("#profile-link").removeClass('selected');
+Template.connections.rendered = function() {
+	$("#connections-link").addClass('selected');
+	$("#jokes-link").removeClass('selected');
 	$("#rankings-link").removeClass('selected');
 	$("#search-link").removeClass('selected');
 	$("#login-link").removeClass('selected');
 	$("#userProfile-link").removeClass('selected');
     $("#findCollabolearners-link").removeClass('selected');
-    $("#connections-link").removeClass('selected');
+    $("#profile-link").removeClass('selected');
+
 }
 
-Template.jokes.helpers({
+
+Template.connections.helpers({
 	jokes: function() {
 		var jokes = Jokes.find({}, {sort: {createdAt: -1}});
 		return jokes;
 	}
 });
 
-Template.jokes.events({
+Template.connections.events({
 	"click #laugh": function() {
 		var thisUser = Meteor.userId();
 		var thisJoke = Jokes.findOne({_id: this._id})._id;
@@ -90,3 +92,34 @@ Template.jokes.events({
 	},
 
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

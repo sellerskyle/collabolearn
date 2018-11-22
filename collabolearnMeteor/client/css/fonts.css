@@ -1,104 +1,169 @@
-/* FONTS */
-h1, h2, h3, h4, h5, h6, p,{
-  font-family: 'Montserrat', sans-serif;
+#search-wrap {
+  background-color: #eaeaea;
+  padding: 50px 20px;
+  margin-bottom: 50px;
 }
 
-h1 {
-	font-size: 50px;
+.leaderboard {
+  border-top: 1px solid #f1f1f1;
+  counter-reset: ol-counter;
+  list-style-type: none;
+  margin: 0 0 1.5em;
+  padding: 0;
+  min-height: 530px;
 }
 
-h2 {
-	font-size: 30px;
+.user {
+  border-bottom: 1px solid #f1f1f1;
+  cursor: pointer;
+  padding: .5em 0;
+  position: relative;
+  overflow: hidden;
+  transition: background 300ms ease-out;
+  border-left: 4px solid white;
 }
 
-h3 {
-	font-size: 24px;
+.user:before {
+  color: #999;
+  content: counter(ol-counter);
+  counter-increment: ol-counter;
+  display: inline-block;
+  font-weight: 300;
+  line-height: 3em;
+  text-align: center;
+  vertical-align: middle;
+  width: 3em;
 }
 
-p { 
-	font-size: 14px;
+.user .name {
+  display: inline-block;
+  font-size: 1.25em;
+  font-weight: 300;
+  vertical-align: middle;
 }
 
-.light {
-  font-weight: 100
+.mini-profile-img img {
+  width: 50px;
 }
 
-.semi-light {
-  font-weight: 300
+.user .author {
+  font-size: 16px;
+  margin-right: 1em;
+  vertical-align: top;
 }
 
-.regular {
-  font-weight: 400
+.user .post {
+  font-size: 20px;
+  margin-right: 1em;
+  vertical-align: top;
 }
 
-.bold {
-  font-weight: 600
+.user .vote-score {
+  font-size: 16px;
+  margin-right: 1em;
+  vertical-align: top;
 }
 
-.heavy {
-  font-weight: 900
+.user.selected {
+  background-color: #fefff4;
+  border-left: #52b859 4px solid;
+  height: auto;
+  transition: all 0.5s ease;
 }
 
-/* ==========================================================================
-   Colors
-   ==========================================================================
-*/ 
-
-.white {
-  color: #fff;
+.user:hover {
+  background-color: #fefff4;
 }
 
-.red {
-  color: #ec4a4d;
+.details {
+  overflow: hidden;
 }
 
-.blue {
-  color: #2495d0;
+.details .name {
+  display: inline-block;
+  font-size: 1.5em;
+  font-weight: 300;
+  line-height: 2.25rem;
+  padding-left: 1.25rem;
+  vertical-align: middle;
 }
 
-.green {
-  color: #52b859;
+.easy-search-input {
+    width: 100%;
+    height: 40px;
+    font-size: 15px;
+    padding: 5px 12px;
 }
 
-.yellow {
-  color: #f7cb5b;
+.padded {
+    padding: 20px 0;
 }
 
-/* ==========================================================================
-   Mobile styles - Width adjustments
-   ========================================================================== */
-/* Landscape phones and down */
-@media (max-width: 480px) { 
-
+.examples, .count-results {
+    color: grey;
 }
 
-/* Landscape phone to portrait tablet */
-@media (min-width: 481px) and (max-width: 767px) { 
-
+.examples {
+    font-style: italic;
 }
 
-/* Portrait tablet to landscape and desktop */
-@media (min-width: 768px) and (max-width: 991px) { 
-
+.jokeInfo {
+  padding-left: 46px;
 }
 
-/* Desktops and laptops ----------- */
-@media (min-width: 992px) and (max-width: 1199px) {
-
+.pagination {
+    list-style-type: none;
+    text-align: center;
+    font-size: 17px;
+    padding: 10px 0 0 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
-/* Large screens ----------- */
-@media (min-width: 1200px) and (max-width: 3000px) {
-
+.pagination .page {
+    display: inline-block;
+    padding: 5px 0;
+    margin: 0 2px;
+    min-width: 25px;
+    cursor: pointer;
+    color: #2495d0;
 }
 
-/* ==========================================================================
-   Height adjustments
-   ========================================================================== */
-/* Landscape phones and down */
-@media (max-height:  800px) { 
-
+.pagination .page.disabled {
+    color: grey;
 }
 
+.pagination .page.current {
+    color: black;
+    font-weight: bold;
+}
 
+@media (max-width: 500px) {
+  .details, .message {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    background-color: #fafafa;
+    width: 100%;
+    padding: 12px 15px;
+    border-top: 1px solid #ccc;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
 
+  .details .name {
+    font-size: 1.2em;
+    padding-left: 0;
+  }
+
+  .user:hover {
+    background-color: inherit;
+  }
+
+  .user.selected:hover {
+    background-color: #fefff4;
+  }
+}

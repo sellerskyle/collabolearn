@@ -1,0 +1,58 @@
+<template name="userProfile">
+    {{#if currentUser}}
+        <!-- profile -->
+        <div id="profile-wrap">
+            <center>
+                {{#with UserImages}}
+                <img src="{{image}}" class="profile-img">
+                {{else}}
+                <img src="github.svg" class="profile-img">
+                <form class="edit-profile" enctype="multipart/form-data">
+                    <label for="profileImage">Choose Profile Image</label>
+                    <span id="filename"></span>
+                    <input type="file" name="profileImage" id="profileImage" class="black profileImage">
+                    <br>
+                    <button type="submit" value="Upload Photo" id="profile-btn" class="btn btn-sml btn-primary">Upload Photo</button>
+                </form>
+                {{/with}}
+                <h1 class="username">{{username}}</h1>
+                <h3>{{email}}</h3>
+                    <div class="" id="">
+                        <img src="laugh.png" class="profile-smiley" id="laugh">
+                        <img src="frown.png" class="profile-smiley" id="frown">
+                        <img src="puke.png" class="profile-smiley" id="puke">
+                    </div>
+                    <div class="score" id="">
+                        <h3 class="count red block">{{userLaughScore}}</h3>
+                        <h3 class="count yellow block">{{userFrownScore}}</h3>
+                        <h3 class="count green block">{{userPukeScore}}</h3>
+                    </div>
+            </center>
+        </div>
+        <!-- End profile -->
+    {{/if}}
+    </template>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

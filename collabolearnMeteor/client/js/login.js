@@ -10,6 +10,9 @@ Template.login.rendered = function() {
 	$("#rankings-link").removeClass('selected');
 	$("#search-link").removeClass('selected');
 	$("#jokes-link").removeClass('selected');
+	$("#userProfile-link").removeClass('selected');
+    $("#findCollabolearners-link").removeClass('selected');
+    $("#connections-link").removeClass('selected');
 }
 
 Template.login.events({

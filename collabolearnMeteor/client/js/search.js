@@ -4,6 +4,9 @@ Template.search.rendered = function() {
 	$("#rankings-link").removeClass('selected');
 	$("#jokes-link").removeClass('selected');
 	$("#login-link").removeClass('selected');
+	$("#userProfile-link").removeClass('selected');
+    $("#findCollabolearners-link").removeClass('selected');
+    $("#connections-link").removeClass('selected');
 }
 
 Template.search.helpers({

@@ -4,6 +4,9 @@ Template.rankings.rendered = function() {
 	$("#jokes-link").removeClass('selected');
 	$("#search-link").removeClass('selected');
 	$("#login-link").removeClass('selected');
+	$("#userProfile-link").removeClass('selected');
+    $("#findCollabolearners-link").removeClass('selected');
+    $("#connections-link").removeClass('selected');
 }
 
 Template.rankings.helpers({
