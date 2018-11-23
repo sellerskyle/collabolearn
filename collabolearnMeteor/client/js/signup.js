@@ -24,6 +24,21 @@ Template.signup.events({
 					frownScore: 0,
 					pukeScore: 0,
 					voted: [],
+
+					//begin new fields
+
+					//String arrays that contain names of skills
+					skillsUserHas: [],
+					skillsUserWants: [],
+					
+					//Arrays contain usernames (or userID's, i havent decided yet) of respective users
+					wantToConnectUsers: [],
+					maybeLaterUsers: [],
+					passedUsers: [],
+
+					//Array contains _id of connections the user has made
+					connections: [],
+
 				}
 			}, function(err){
 				if(err){

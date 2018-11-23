@@ -56,6 +56,10 @@ JokesIndex = new EasySearch.Index({
 	}
 });
 
+//begin new collections
+
+Connections = new Mongo.Collection("Connections");
+
 
 
 

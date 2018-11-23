@@ -105,6 +105,111 @@ if (Meteor.isServer) {
 			}
 		},
 
+		//begin new methods
+
+		addSkillUserHas(thisUser, skill) {
+			if(!Meteor.userId()) {
+				throw new Meteor.Error('not authorized');
+				this.stop();
+				return false;
+			} else {
+				Meteor.users.update(thisUser, { $addToSet: { skillsUserHas: skill}});
+			}
+		},
+
+		addSkillUserWants(thisUser, skill) {
+			if(!Meteor.userId()) {
+				throw new Meteor.Error('not authorized');
+				this.stop();
+				return false;
+			} else {
+				Meteor.users.update(thisUser, { $addToSet: { skillsUserWants: skill}});
+			}
+		},
+
+		addUserConnection(thisUser, connectionId) {
+			if(!Meteor.userId()) {
+				throw new Meteor.Error('not authorized');
+				this.stop();
+				return false;
+			} else {
+				Meteor.users.update(thisUser, { $addToSet: { connections: connectionId}});
+			}
+		},
+
+		// Possible variation on addUserConnection
+
+		addUserConnection(userOne, userTwo, connectionId) {
+			if(!Meteor.userId()) {
+				throw new Meteor.Error('not authorized');
+				this.stop();
+				return false;
+			} else {
+				Meteor.users.update(userOne, { $addToSet: { connections: connectionId}});
+				Meteor.users.update(userTwo, { $addToSet: { connections: connectionId}});
+			}
+		},
+
+		addConnection(userOne, userTwo) {
+			if(!Meteor.userId()) {
+				throw new Meteor.Error('not authorized');
+				return false;
+			} else {
+				var username = Meteor.user().username;
+
+				Connections.insert({
+					userOne: userOne,
+					userTwo: userTwo,
+					author: username,
+					createdAt: new Date(),
+					messages: [],
+					meetUpLocations: [],
+					meetUpTimes: [], 
+				});
+
+			}
+		},
+
+		addMessage(thisConnection, message) {
+			if(!Meteor.userId()) {
+				throw new Meteor.Error('not authorized');
+				this.stop();
+				return false;
+			} else {
+				Connections.update(thisConnection, { $addToSet: { messages: message}});
+			}
+		},
+
+		addMeetUpLocation(thisConnection, location) {
+			if(!Meteor.userId()) {
+				throw new Meteor.Error('not authorized');
+				this.stop();
+				return false;
+			} else {
+				Connections.update(thisConnection, { $addToSet: { meetUpLocations: location}});
+			}
+		},
+
+		addMeetUpTime(thisConnection, time) {
+			if(!Meteor.userId()) {
+				throw new Meteor.Error('not authorized');
+				this.stop();
+				return false;
+			} else {
+				Connections.update(thisConnection, { $addToSet: { meetUpTimes: time}});
+			}
+		},
+
+		removeJoke: function(connectionId) {
+			if(!Meteor.userId()) {
+				throw new Meteor.Error('not authorized');
+				this.stop();
+				return false;
+			} else {
+				Connections.remove(connectionId);
+			}
+		},
+
 	});
 	
 }
