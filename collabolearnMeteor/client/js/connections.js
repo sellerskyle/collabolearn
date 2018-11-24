@@ -15,6 +15,14 @@ Template.connections.helpers({
 	jokes: function() {
 		var jokes = Jokes.find({}, {sort: {createdAt: -1}});
 		return jokes;
+	},
+
+	userConnections: function() {
+		var username = Meteor.user().username;
+		var userId = Meteor.userId();
+		var userJokes = Jokes.find({ $or :[{userOne: userId}, {userTwo: userId}]}, {sort: {createdAt: -1}});
+
+		return userJokes;
 	}
 });
 

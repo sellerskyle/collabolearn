@@ -26,4 +26,15 @@ if (Meteor.isServer) {
 		return UserImages.find();
 	});
 
+	//begin new publish
+
+	Meteor.publish('Connections', function() {
+		if(!this.userId){
+			return false;
+			throw new Meteor.Error('not authorized');
+		} else {
+			return Connections.find();
+		}
+	});
+
 }

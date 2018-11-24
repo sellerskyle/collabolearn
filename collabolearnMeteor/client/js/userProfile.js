@@ -29,32 +29,22 @@ Template.userProfile.helpers({
 		}
 	}, 
 
-	userJokes: function() {
-		var username = Meteor.user().username;
-		var userId = Meteor.userId();
-		var userJokes = Jokes.find({userId: userId}, {sort: {createdAt: -1}});
-		return userJokes;
-	},
-
-	userLaughScore: function() {
-		return Meteor.user().profile.laughScore;
-	},
-
-	userFrownScore: function() {
-		return Meteor.user().profile.frownScore;
-	},
-
-	userPukeScore: function() {
-		return Meteor.user().profile.pukeScore;
-	},
-
 	UserImages: function() {
 		var username = Meteor.user().username;
 		var userId = Meteor.userId();
 		var URL = UserImages.findOne({username: username}, {userId: userId});
 		return URL;
-	}
+	},
 
+	//begin new helpers
+
+	skillsUserHas: function() {
+		return Meteor.user().profile.skillsUserHas;
+	},
+
+	skillsUserWants: function() {
+		return Meteor.user().profile.skillsUserWants;
+	},
 });
 
 Template.userProfile.events({
