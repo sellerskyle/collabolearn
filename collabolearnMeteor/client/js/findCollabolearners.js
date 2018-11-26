@@ -53,7 +53,67 @@ Template.findCollabolearners.helpers({
 		var userId = Meteor.userId();
 		var URL = UserImages.findOne({username: username}, {userId: userId});
 		return URL;
-	}
+	},
+
+	//begin new helpers
+	matchedCollabolearners: function() {
+		var skillsUserHas = Meteor.user().profile.skillsUserHas;
+		var skillsUserWants = Meteor.user().profile.skillsUserWants;
+
+		var wantToConnectUsers = Meteor.user().profile.wantToConnectUsers;
+		var maybeLaterUsers = Meteor.user().profile.maybeLaterUsers;
+		var passedUsers = Meteor.user().profile.passedUsers;
+
+
+		var allUsers = Users.find({},{});
+
+		var currentUser;
+		var currentUserId;
+		var currentSkill;
+		var matchedSkillsUserWants;
+		var matchedSkillsUserHas;
+
+		var matchedUsers;
+		var currentMatchedUser;
+
+		var isConnect;
+		var isMaybe;
+		var isPass;
+
+
+		for(var i = 0; i < allUsers.length; i++)
+		{
+			currentUser = allUsers[i];
+			for (var j = 0; j < skillsUserWants.length; j++)
+			{
+				currentSkill = skillsUserWants[j];
+
+				matchedSkillsUserWants.push(currentUser.profile.skillsUserHas.filter(skill => skill === currentSkill));
+			}
+
+			for (var k = 0; k < skillsUserHas.length; j++)
+			{
+				currentSkill = skillsUserHas[k];
+
+				matchedSkillsUserHas.push(currentUser.profile.skillsUserWants.filter(skill => skill === currentSkill));
+			}
+
+			if(matchedSkillsUserWants.length > 0 && matchedSkillsUserHas.length > 0) {
+				currentUserId = currentUser._id;
+				isConnect = wantToConnectUsers.filter(user => user === currentUserId);
+				isMaybe = maybeLaterUsers.filter(user => user === currentUserId);
+				isPass = passedUsers.filter(user => user === currentUserId);
+
+				if(isConnect < 1 && isMaybe < 1 && isPass < 1) {
+					currentMatchedUser = new MatchedUser(currentUserId, matchedSkillsUserWants, matchedSkillsUserHas);
+					matchedUsers.add(currentMatchedUser);
+				}
+			}
+		}
+
+		return matchedUsers;
+
+	},
 
 });
 
