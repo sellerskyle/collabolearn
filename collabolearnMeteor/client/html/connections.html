@@ -9,10 +9,12 @@
         <p class="meta">Skills This User Has</p>
         {{#each skillsUserHas this.userTwo}}
             <p class="regular joke-desc">"{{this}}"</p>
+            <p>test</p>
         {{/each}}
         <p class="meta">Skills This User Wants</p>
         {{#each skillsUserWants this.userTwo}}
-            <p class="regular joke-desc">"{{this}}"</p>
+            <p>"{{this}}"</p>
+            <p>test</p>
         {{/each}}
         <div class="row">
             <!--<div class=".col-sm-6 .col-md-5 .col-lg-6" id="info">
@@ -53,7 +55,7 @@
                 <h1 style="text-align:center">Chat</h1>
             </div>
             <div class="container">
-                <img src="/w3images/bandmember.jpg" alt="Avatar">
+                <img src="obama.jpg" alt="Avatar">
                 <p>Hello. How are you today?</p>
                 <span class="time-right">11:00</span>
             </div>
@@ -65,7 +67,7 @@
             </div>
 
             <div class="container">
-                <img src="/w3images/bandmember.jpg" alt="Avatar">
+                <img src="obama.jpg" alt="Avatar">
                 <p>Sweet! So, what do you wanna do today?</p>
                 <span class="time-right">11:02</span>
             </div>
@@ -75,6 +77,8 @@
                 <p>Nah, I dunno. Play soccer.. or learn more coding perhaps?</p>
                 <span class="time-left">11:05</span>
             </div>
+            <input type="text" class="form-control" placeholder="Enter Message">
+            <button type="submit" id="sendMessage" class="btn btn-sml btn-primary">Send</button> 
             <!--<div class="container">
                 <input type="text" placeholder="Enter Username" name="uname">
                 <input type="password" placeholder="Enter Password" name="psw">

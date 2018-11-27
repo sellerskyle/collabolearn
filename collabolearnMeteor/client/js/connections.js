@@ -26,6 +26,7 @@ Template.connections.helpers({
 	},
 
 	username: function(userId) {
+		debugger;
 		return Meteor.users.findOne({_id: userId}, {}).username
 	},
 
