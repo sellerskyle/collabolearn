@@ -2,7 +2,7 @@
     {{#if currentUser}}
         <!-- profile -->
         {{#each userConnections}}
-        <div id="profile-wrap" class="this.userTwo">
+        <div id="profile-wrap" class="{{this.userTwo}}">
             <center>
                 {{#with UserImages}}
                 <img src="{{image}}" class="profile-img">
@@ -26,9 +26,9 @@
         <h4>{{this}}</h4>
         {{/each}}
                 <div class="" id="">
-                    <button type="submit" value="Pass" id="edit-skills-btn" class="btn btn-sml btn-primary">Pass</button>
-                    <button type="submit" value="MaybeLater" id="edit-skills-btn" class="btn btn-sml btn-primary">Maybe Later</button>
-                    <button type="submit" value="Connect" id="edit-skills-btn" class="btn btn-sml btn-primary">Connect</button>
+                    <button type="submit" value="Pass" id="edit-skills-btn" class="btn btn-sml btn-primary deactivate">Pass</button>
+                    <button type="submit" value="MaybeLater" id="edit-skills-btn" class="btn btn-sml btn-primary deactivate">Maybe Later</button>
+                    <button type="submit" value="Connect" id="edit-skills-btn" class="btn btn-sml btn-primary deactivate">Connect</button>
                 </div>
             </center>
         </div>

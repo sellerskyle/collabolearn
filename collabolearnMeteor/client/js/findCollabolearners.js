@@ -148,9 +148,9 @@ Template.findCollabolearners.events({
 		return false // prevent submit
 	},
 
-	"click .edit-profile" : function(event) {
+	"click .deactivate" : function(event) {
 		var userId = this.userTwo
-		var toHide = document.getElementsByClassName(userId);
+		var toHide = document.getElementById("profile-wrap");
 
 		toHide.style.display = "none";
 	}
