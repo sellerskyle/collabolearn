@@ -5,7 +5,15 @@
     {{#each userConnections}}
     <!-- Joke -->
     <div class="joke">
-        <h1 style="color:white;">{{this.userTwo}}</h1>
+        <h1 class="joke-title">{{username this.userTwo}}</h1>
+        <p class="meta">Skills This User Has</p>
+        {{#each skillsUserHas this.userTwo}}
+            <p class="regular joke-desc">"{{this}}"</p>
+        {{/each}}
+        <p class="meta">Skills This User Wants</p>
+        {{#each skillsUserWants this.userTwo}}
+            <p class="regular joke-desc">"{{this}}"</p>
+        {{/each}}
         <div class="row">
             <!--<div class=".col-sm-6 .col-md-5 .col-lg-6" id="info">
                 <h1 class="joke-title">{{jokeName}}</h1>
@@ -24,6 +32,9 @@
             </div>-->
         </div>
         <!--<p class="regular joke-desc">"{{jokePost}}"</p>-->
+        <button onclick="document.getElementById('modal-wrapper').style.display='block'" style="width:200px; margin-top:0px; margin-left:160px;" type="submit" value="View Chat" id="edit-skills-btn" class="btn btn-sml btn-primary">
+            View Chat
+        </button>
 
     </div>
     <!--<h1 style="text-align:center; font-size:50px; color:#fff">Modal Popup Box Login Form</h1>-->
@@ -31,9 +42,7 @@
     <!--<button onclick="document.getElementById('modal-wrapper').style.display='block'" style="width:200px; margin-top:0px; margin-left:160px;">
         Open Popup
     </button>-->
-    <button onclick="document.getElementById('modal-wrapper').style.display='block'" style="width:200px; margin-top:0px; margin-left:160px;" type="submit" value="View Chat" id="edit-skills-btn" class="btn btn-sml btn-primary">
-    View Chat
-    </button>
+
 
     <div id="modal-wrapper" class="modal">
         <form class="modal-content animate" action="/action_page.php">
@@ -91,7 +100,7 @@ window.onclick = function(event) {
 
     <!-- End Joke -->
     {{else}}
-    <h1>no jokes to display</h1>
+    <h1>no connections to display</h1>
     {{/each}}
 
     <!--<html>

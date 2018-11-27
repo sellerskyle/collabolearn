@@ -8,7 +8,7 @@ Meteor.startup(function() {
 
     	// Super User
       Accounts.createUser({
-        username: 'Super User',
+        username: 'Joe Apple',
         email: 'Super@user.com',
         password: 'password',
         profile: {
@@ -27,7 +27,7 @@ Meteor.startup(function() {
         }
       });
 
-      var user0Id = Meteor.users.findOne({username: 'Super User'})._id;
+      var user0Id = Meteor.users.findOne({username: 'Joe Apple'})._id;
 
       Jokes.insert({
         jokeName: "Lame Joke 1",
@@ -46,7 +46,7 @@ Meteor.startup(function() {
 
       // User 1
       Accounts.createUser({
-        username: 'User1',
+        username: 'Susie Banana',
         email: 'user1@example.com',
         password: 'password',
         profile: {
@@ -65,7 +65,7 @@ Meteor.startup(function() {
         }
       });
 
-      var user1Id = Meteor.users.findOne({username: 'User1'})._id;
+      var user1Id = Meteor.users.findOne({username: 'Susie Banana'})._id;
 
       Jokes.insert({
         jokeName: "Funny Joke 1",
@@ -84,7 +84,7 @@ Meteor.startup(function() {
 
       // User 2
       Accounts.createUser({
-        username: 'User2',
+        username: "Rodney Grape",
         email: 'user2@example.com',
         password: 'password',
         profile: {
@@ -103,7 +103,7 @@ Meteor.startup(function() {
         }
       });
 
-      var user2Id = Meteor.users.findOne({username: 'User2'})._id;
+      var user2Id = Meteor.users.findOne({username: 'Rodney Grape'})._id;
 
       Jokes.insert({
         jokeName: "Nasty Joke 1",
@@ -122,7 +122,7 @@ Meteor.startup(function() {
 
       // User 3
       Accounts.createUser({
-        username: 'User3',
+        username: 'Lauren Peach',
         email: 'user3@example.com',
         password: 'password',
         profile: {
@@ -141,7 +141,7 @@ Meteor.startup(function() {
         }
       });
 
-      var user3Id = Meteor.users.findOne({username: 'User3'})._id;
+      var user3Id = Meteor.users.findOne({username: 'Lauren Peach'})._id;
 
       Jokes.insert({
         jokeName: "Funny Joke 2",
@@ -160,7 +160,7 @@ Meteor.startup(function() {
 
       // User 4
       Accounts.createUser({
-        username: 'User4',
+        username: 'Chelsea Mango',
         email: 'user4@example.com',
         password: 'password',
         profile: {
@@ -179,7 +179,7 @@ Meteor.startup(function() {
         }
       });
 
-      var user4Id = Meteor.users.findOne({username: 'User4'})._id;
+      var user4Id = Meteor.users.findOne({username: 'Chelsea Mango'})._id;
 
       Jokes.insert({
         jokeName: "Lame Joke 2",

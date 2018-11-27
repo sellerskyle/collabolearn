@@ -18,13 +18,26 @@ Template.connections.helpers({
 	},
 
 	userConnections: function() {
-		debugger;
 		var username = Meteor.user().username;
 		var userId = Meteor.userId();
-		var userConnections = Connections.find({ $or :[{userOne: userId}, {userTwo: userId}]}, {sort: {createdAt: -1}});
+		var userConnections = Connections.find({ $or :[{userOne: userId}, {userTwo: userId}]}, {sort: {createdAt: 1}});
 
 		return userConnections;
-	}
+	},
+
+	username: function(userId) {
+		return Meteor.users.findOne({_id: userId}, {}).username
+	},
+
+	skillsUserHas: function(userId) {
+		debugger;
+		return Meteor.users.find({_id: userId}, {}).skillsUserHas
+	},
+
+	skillsUserWants: function(userId) {
+		return Meteor.users.findOne({_id: userId}, {}).skillsUserWants
+	},
+
 });
 
 Template.connections.events({
