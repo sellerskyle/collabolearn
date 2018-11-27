@@ -31,4 +31,37 @@
 	<h1>no jokes to display</h1>
 	{{/each}}
 
+
+	{{> userProfile}}
+
+	{{#each skillsUserHas}}
+	<!-- Skills User Has -->
+	<div class="skillsUserHas">
+		<div class="row">
+			<div class=".col-sm-6 .col-md-5 .col-lg-6" if="skillsUserHas">
+				<h1 class="skillsUserHas">{{skillsUserHas}}</h1>
+			</div>
+		</div>
+
+	</div>
+	{{/each}}
+	<!-- End Skills User Has -->
+
+	{{#each skillsUserWants}}
+	<!-- Skills User Wants -->
+	<div class="skillsUserWants">
+		<div class="row">
+			<div class=".col-sm-6 .col-md-5 .col-lg-6" if="skillsUserWants">
+				<h1 class="skillsUserWants">{{skillsUserWants}}</h1>
+			</div>
+		</div>
+	</div>
+	{{/each}}
+	<!-- End Skills User Wants -->
+
+
+
+
+
+
 </template>

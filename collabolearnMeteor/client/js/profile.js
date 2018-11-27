@@ -5,8 +5,8 @@ Template.profile.rendered = function() {
 	$("#search-link").removeClass('selected');
 	$("#login-link").removeClass('selected');
 	$("#userProfile-link").removeClass('selected');
-    $("#findCollabolearners-link").removeClass('selected');
-    $("#connections-link").removeClass('selected');
+   	$("#findCollabolearners-link").removeClass('selected');
+   	$("#connections-link").removeClass('selected');
 
 }
 
@@ -53,7 +53,15 @@ Template.profile.helpers({
 		var userId = Meteor.userId();
 		var URL = UserImages.findOne({username: username}, {userId: userId});
 		return URL;
-	}
+	},
+	skillsUserHas: function() {
+		var skillsUserHas = skillsUserHas.find({skillsUserHas: skillsUserHas}, {sort: {createdAt: -1}});
+		return skillsUserHas;
+	},
+	skillsUserWants: function() {
+		var skillsUserWants = skillsUserWants.find({skillsUserWants: skillsUserWants}, {sort: {createdAt: -1}});
+		return skillsUserWants;
+	},
 
 });
 
