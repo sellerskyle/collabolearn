@@ -57,6 +57,8 @@ Template.findCollabolearners.helpers({
 
 	//begin new helpers
 	matchedCollabolearners: function() {
+		console.log("matchedCollabolearners entered");
+		debugger;
 		var skillsUserHas = Meteor.user().profile.skillsUserHas;
 		var skillsUserWants = Meteor.user().profile.skillsUserWants;
 
@@ -65,7 +67,7 @@ Template.findCollabolearners.helpers({
 		var passedUsers = Meteor.user().profile.passedUsers;
 
 
-		var allUsers = Users.find({},{});
+		var allUsers = Meteor.users.find();
 
 		var currentUser;
 		var currentUserId;
@@ -81,7 +83,7 @@ Template.findCollabolearners.helpers({
 		var isPass;
 
 
-		for(var i = 0; i < allUsers.length; i++)
+		for(var i = 0; i < allUsers.count(); i++)
 		{
 			currentUser = allUsers[i];
 			for (var j = 0; j < skillsUserWants.length; j++)

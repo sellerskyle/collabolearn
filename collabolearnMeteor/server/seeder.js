@@ -15,6 +15,9 @@ Meteor.startup(function() {
         	laughScore: 0,
         	frownScore: 0,
           pukeScore: 0,
+
+          skillsUserHas: ["Public Speaking", "Sports"],
+          skillsUserWants: ["Math", "Chemistry", "Biology"]
         }
       });
 
@@ -44,6 +47,9 @@ Meteor.startup(function() {
           laughScore: 0,
           frownScore: 0,
           pukeScore: 0,
+
+          skillsUserHas: ["Math", "Chemistry", "Biology", "Physics"],
+          skillsUserWants: ["Public Speaking", "Sports", "Music"]
         }
       });
 
@@ -73,6 +79,9 @@ Meteor.startup(function() {
           laughScore: 0,
           frownScore: 0,
           pukeScore: 0,
+
+          skillsUserHas: ["Music", "Foreign Language", "Literature"],
+          skillsUserWants: ["Programming", "Sports"]
         }
       });
 
@@ -102,6 +111,9 @@ Meteor.startup(function() {
           laughScore: 0,
           frownScore: 0,
           pukeScore: 0,
+
+          skillsUserHas: ["Math", "Physics"],
+          skillsUserWants: ["Literature", "Sports", "Biology"]
         }
       });
 
@@ -131,6 +143,9 @@ Meteor.startup(function() {
           laughScore: 0,
           frownScore: 0,
           pukeScore: 0,
+
+          skillsUserHas: ["Math", "Programming"],
+          skillsUserWants: ["Foreign Language", "Music"]
         }
       });
 

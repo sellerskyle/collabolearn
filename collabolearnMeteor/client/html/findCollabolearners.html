@@ -25,9 +25,9 @@
                 <h4>- Sample 2</h4>
                 <h4>- Sample 3</h4>
                 <div class="" id="">
-                    <button type="submit" value="No" id="edit-skills-btn" class="btn btn-sml btn-primary">No</button>
-                    <button type="submit" value="Maybe" id="edit-skills-btn" class="btn btn-sml btn-primary">Maybe</button>
-                    <button type="submit" value="Yes" id="edit-skills-btn" class="btn btn-sml btn-primary">Yes</button>
+                    <button type="submit" value="Pass" id="edit-skills-btn" class="btn btn-sml btn-primary">Pass</button>
+                    <button type="submit" value="MaybeLater" id="edit-skills-btn" class="btn btn-sml btn-primary">Maybe Later</button>
+                    <button type="submit" value="Connect" id="edit-skills-btn" class="btn btn-sml btn-primary">Connect</button>
                 </div>
                 <!--<h3>{{email}}</h3>
         <div class="" id="">
@@ -56,6 +56,21 @@
     </script>
     
     {{/if}}
+
+    {{#each matchedCollabolearners}}
+        console.log({{userId}});
+        console.log({{skillsUserWants}});
+        console.log({{skillsUserHas}});
+        <p>UserId : {{userId}}</p>
+        <p>Skills you Want</p>
+        {{#each skillsUserWants}}
+            <p>{{skill}}</p>
+        {{/each}}
+        <p>Skills they Want</p>
+        {{#each skillsUserHas}}
+            <p>{{skill}}</p>
+        {{/each}}
+    {{/each}}
     </template>
     
     
