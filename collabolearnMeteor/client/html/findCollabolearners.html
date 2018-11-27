@@ -16,15 +16,13 @@
     </form>-->
                 {{/with}}
                 <h1 class="username">{{username}}</h1>
+		{{#each skillsUserHas}}
                 <h3>Skills</h3>
-                <h4>- Sample 1</h4>
-                <h4>- Sample 2</h4>
-                <h4>- Sample 3</h4>
+                {{/each}}
+		{{#each skillsUserWants}}
                 <h3>Skills wanted</h3>
-                <h4>- Sample 1</h4>
-                <h4>- Sample 2</h4>
-                <h4>- Sample 3</h4>
-                <div class="" id="">
+                {{/each}}
+		<div class="" id="">
                     <button type="submit" value="No" id="edit-skills-btn" class="btn btn-sml btn-primary">No</button>
                     <button type="submit" value="Maybe" id="edit-skills-btn" class="btn btn-sml btn-primary">Maybe</button>
                     <button type="submit" value="Yes" id="edit-skills-btn" class="btn btn-sml btn-primary">Yes</button>
