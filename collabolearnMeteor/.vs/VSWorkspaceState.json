@@ -1,8 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\client"
+    "\\client",
+    "\\client\\css",
+    "\\client\\html",
+    "\\client\\js"
   ],
-  "SelectedNode": "\\client\\main.css",
+  "SelectedNode": "\\client\\html\\connections.html",
   "PreviewInSolutionExplorer": false
 }
