@@ -17,15 +17,13 @@
                 {{/with}}
                 <h1 class="username">{{username}}</h1>
                 <h3>{{email}}</h3>
+		{{#each skillsUserHas}}
                 <h3>Skills</h3>
-                <h4>- Sample 1</h4>
-                <h4>- Sample 2</h4>
-                <h4>- Sample 3</h4>
+		{{/each}}
                 <button type="submit" value="Edit Skills" id="edit-skills-btn" class="btn btn-sml btn-primary">Edit Skills</button>
+		{{#each skillsUserWants}}
                 <h3>Skills wanted</h3>
-                <h4>- Sample 1</h4>
-                <h4>- Sample 2</h4>
-                <h4>- Sample 3</h4>
+		{{/each}}
                 <button type="submit" value="Edit Skills Wanted" id="edit-skills-wanted-btn" class="btn btn-sml btn-primary">Edit Skills Wanted</button>
                 <!--<div class="" id="">
         <img src="laugh.png" class="profile-smiley" id="laugh">
@@ -39,7 +37,6 @@
     </div>
                 te
                 r>
-
                 /c
                 r>-->
             </center>
