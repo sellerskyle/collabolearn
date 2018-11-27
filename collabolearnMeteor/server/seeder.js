@@ -17,7 +17,13 @@ Meteor.startup(function() {
           pukeScore: 0,
 
           skillsUserHas: ["Public Speaking", "Sports"],
-          skillsUserWants: ["Math", "Chemistry", "Biology"]
+          skillsUserWants: ["Math", "Chemistry", "Biology"],
+
+          wantToConnectUsers: [],
+          maybeLaterUsers: [],
+          passedUsers: [],
+
+          connections: [],
         }
       });
 
@@ -49,7 +55,13 @@ Meteor.startup(function() {
           pukeScore: 0,
 
           skillsUserHas: ["Math", "Chemistry", "Biology", "Physics"],
-          skillsUserWants: ["Public Speaking", "Sports", "Music"]
+          skillsUserWants: ["Public Speaking", "Sports", "Music"],
+
+          wantToConnectUsers: [],
+          maybeLaterUsers: [],
+          passedUsers: [],
+
+          connections: [],
         }
       });
 
@@ -81,7 +93,13 @@ Meteor.startup(function() {
           pukeScore: 0,
 
           skillsUserHas: ["Music", "Foreign Language", "Literature"],
-          skillsUserWants: ["Programming", "Sports"]
+          skillsUserWants: ["Programming", "Sports"],
+
+          wantToConnectUsers: [],
+          maybeLaterUsers: [],
+          passedUsers: [],
+
+          connections: [],
         }
       });
 
@@ -113,7 +131,13 @@ Meteor.startup(function() {
           pukeScore: 0,
 
           skillsUserHas: ["Math", "Physics"],
-          skillsUserWants: ["Literature", "Sports", "Biology"]
+          skillsUserWants: ["Literature", "Sports", "Biology"],
+
+          wantToConnectUsers: [],
+          maybeLaterUsers: [],
+          passedUsers: [],
+
+          connections: [],
         }
       });
 
@@ -145,7 +169,13 @@ Meteor.startup(function() {
           pukeScore: 0,
 
           skillsUserHas: ["Math", "Programming"],
-          skillsUserWants: ["Foreign Language", "Music"]
+          skillsUserWants: ["Foreign Language", "Music"],
+
+          wantToConnectUsers: [],
+          maybeLaterUsers: [],
+          passedUsers: [],
+
+          connections: [],
         }
       });
 

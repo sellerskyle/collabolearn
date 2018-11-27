@@ -61,14 +61,15 @@
         console.log({{userId}});
         console.log({{skillsUserWants}});
         console.log({{skillsUserHas}});
+
         <p>UserId : {{userId}}</p>
         <p>Skills you Want</p>
         {{#each skillsUserWants}}
-            <p>{{skill}}</p>
+            <p>{{this}}</p>
         {{/each}}
         <p>Skills they Want</p>
         {{#each skillsUserHas}}
-            <p>{{skill}}</p>
+            <p>{{this}}</p>
         {{/each}}
     {{/each}}
     </template>
