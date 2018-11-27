@@ -1,11 +1,11 @@
 <template name="connections">
 
-    {{> jokeForm}}
+    <!-- {{> jokeForm}} -->
 
-    {{#each jokes}}
+    {{#each userConnections}}
     <!-- Joke -->
     <div class="joke">
-        <h1 style="color:white;">Sample Connection</h1>
+        <h1 style="color:white;">{{this.userTwo}}</h1>
         <div class="row">
             <!--<div class=".col-sm-6 .col-md-5 .col-lg-6" id="info">
                 <h1 class="joke-title">{{jokeName}}</h1>
