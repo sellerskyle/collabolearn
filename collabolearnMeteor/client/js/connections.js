@@ -20,10 +20,25 @@ Template.connections.helpers({
 	userConnections: function() {
 		var username = Meteor.user().username;
 		var userId = Meteor.userId();
-		var userJokes = Jokes.find({ $or :[{userOne: userId}, {userTwo: userId}]}, {sort: {createdAt: -1}});
+		var userConnections = Connections.find({ $or :[{userOne: userId}, {userTwo: userId}]}, {sort: {createdAt: 1}});
 
-		return userJokes;
-	}
+		return userConnections;
+	},
+
+	username: function(userId) {
+		debugger;
+		return Meteor.users.findOne({_id: userId}, {}).username;
+	},
+
+	skillsUserHas: function(userId) {
+		debugger;
+		return Meteor.users.findOne({_id: userId}, {}).profile.skillsUserHas;
+	},
+
+	skillsUserWants: function(userId) {
+		return Meteor.users.findOne({_id: userId}, {}).profile.skillsUserWants;
+	},
+
 });
 
 Template.connections.events({
