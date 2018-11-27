@@ -17,12 +17,16 @@
                 {{/with}}
                 <h1 class="username">{{username}}</h1>
                 <h3>{{email}}</h3>
+                <br>
+                <h3>Skills User Has: </h3>
 		{{#each skillsUserHas}}
-                <h3>Skills</h3>
+                <h4>{{this}}</h4>
 		{{/each}}
                 <button type="submit" value="Edit Skills" id="edit-skills-btn" class="btn btn-sml btn-primary">Edit Skills</button>
+                <br> <br>
+                <h3>Skills User Wants: </h3>
 		{{#each skillsUserWants}}
-                <h3>Skills wanted</h3>
+                <h4>{{this}}</h4>
 		{{/each}}
                 <button type="submit" value="Edit Skills Wanted" id="edit-skills-wanted-btn" class="btn btn-sml btn-primary">Edit Skills Wanted</button>
                 <!--<div class="" id="">

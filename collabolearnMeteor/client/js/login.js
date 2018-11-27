@@ -1,6 +1,6 @@
 Tracker.autorun(function(){
 	if(Meteor.userId()){
-		Router.go("/jokes");
+		Router.go("/userProfile");
 	}
 });
 
