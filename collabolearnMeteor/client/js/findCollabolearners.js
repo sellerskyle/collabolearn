@@ -20,32 +20,26 @@ Template.findCollabolearners.helpers({
 		}
 	},
 
-	username: function() {
-		if(!Meteor.user()) {
-			Bert.alert("you are not logged in, permission denied", "danger", "growl-top-right");
-			return false;
-		} else {
-			return Meteor.user().username;
-		}
-	}, 
-
-	userJokes: function() {
+	userConnections: function() {
 		var username = Meteor.user().username;
 		var userId = Meteor.userId();
-		var userJokes = Jokes.find({userId: userId}, {sort: {createdAt: -1}});
-		return userJokes;
+		var userConnections = Connections.find({ $or :[{userOne: userId}, {userTwo: userId}]}, {sort: {createdAt: 1}});
+
+		return userConnections;
 	},
 
-	userLaughScore: function() {
-		return Meteor.user().profile.laughScore;
+	username: function(userId) {
+		debugger;
+		return Meteor.users.findOne({_id: userId}, {}).username;
 	},
 
-	userFrownScore: function() {
-		return Meteor.user().profile.frownScore;
+	skillsUserHas: function(userId) {
+		debugger;
+		return Meteor.users.findOne({_id: userId}, {}).profile.skillsUserHas;
 	},
 
-	userPukeScore: function() {
-		return Meteor.user().profile.pukeScore;
+	skillsUserWants: function(userId) {
+		return Meteor.users.findOne({_id: userId}, {}).profile.skillsUserWants;
 	},
 
 	UserImages: function() {
@@ -152,6 +146,13 @@ Template.findCollabolearners.events({
 		}
 
 		return false // prevent submit
+	},
+
+	"click .edit-profile" : function(event) {
+		var userId = this.userTwo
+		var toHide = document.getElementsByClassName(userId);
+
+		toHide.style.display = "none";
 	}
 });
 

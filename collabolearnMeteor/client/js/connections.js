@@ -27,16 +27,16 @@ Template.connections.helpers({
 
 	username: function(userId) {
 		debugger;
-		return Meteor.users.findOne({_id: userId}, {}).username
+		return Meteor.users.findOne({_id: userId}, {}).username;
 	},
 
 	skillsUserHas: function(userId) {
 		debugger;
-		return Meteor.users.find({_id: userId}, {}).skillsUserHas
+		return Meteor.users.findOne({_id: userId}, {}).profile.skillsUserHas;
 	},
 
 	skillsUserWants: function(userId) {
-		return Meteor.users.findOne({_id: userId}, {}).skillsUserWants
+		return Meteor.users.findOne({_id: userId}, {}).profile.skillsUserWants;
 	},
 
 });

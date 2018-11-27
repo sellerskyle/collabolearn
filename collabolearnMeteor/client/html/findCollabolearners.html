@@ -1,7 +1,8 @@
 <template name="findCollabolearners">
     {{#if currentUser}}
         <!-- profile -->
-        <div id="profile-wrap">
+        {{#each userConnections}}
+        <div id="profile-wrap" class="this.userTwo">
             <center>
                 {{#with UserImages}}
                 <img src="{{image}}" class="profile-img">
@@ -15,16 +16,15 @@
         <button type="submit" value="Upload Photo" id="profile-btn" class="btn btn-sml btn-primary">Upload Photo</button>
     </form>-->
                 {{/with}}
-                <h1 class="username">{{username}}</h1>
-		{{#each skillsUserHas}}
-                <h3>Skills</h3>
+                <h1 class="username">{{username this.userTwo}}</h1>
+                <h3>Skills This User Has:</h3>
+		{{#each skillsUserHas this.userTwo}}
+                <h4>{{this}}</h4>
                 {{/each}}
-        {{#each skillsUserWants}}
+                <h3>Skills This User Wants:</h3>
+        {{#each skillsUserWants this.userTwo}}
+        <h4>{{this}}</h4>
         {{/each}}
-                <h3>Skills wanted</h3>
-                <h4>- Sample 1</h4>
-                <h4>- Sample 2</h4>
-                <h4>- Sample 3</h4>
                 <div class="" id="">
                     <button type="submit" value="Pass" id="edit-skills-btn" class="btn btn-sml btn-primary">Pass</button>
                     <button type="submit" value="MaybeLater" id="edit-skills-btn" class="btn btn-sml btn-primary">Maybe Later</button>
@@ -32,6 +32,7 @@
                 </div>
             </center>
         </div>
+        {{/each}}
         <!-- End profile -->
     
     <!-- Js for switching file picker span -->
@@ -47,7 +48,7 @@
     
     {{/if}}
 
-    {{#each matchedCollabolearners}}
+    <!-- {{#each matchedCollabolearners}}
         console.log({{userId}});
         console.log({{skillsUserWants}});
         console.log({{skillsUserHas}});
@@ -61,7 +62,7 @@
         {{#each skillsUserHas}}
             <p>{{this}}</p>
         {{/each}}
-    {{/each}}
+    {{/each}} -->
     </template>
     
     
