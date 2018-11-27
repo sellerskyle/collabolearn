@@ -85,7 +85,7 @@ Template.findCollabolearners.helpers({
 
 		for(var i = 0; i < allUsers.count(); i++)
 		{
-			currentUser = allUsers[i]; 
+			currentUser = allUsers[i];
 			for (var j = 0; j < skillsUserWants.length; j++)
 			{
 				currentSkill = skillsUserWants[j];

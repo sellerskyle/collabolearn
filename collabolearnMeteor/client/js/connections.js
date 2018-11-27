@@ -18,11 +18,12 @@ Template.connections.helpers({
 	},
 
 	userConnections: function() {
+		debugger;
 		var username = Meteor.user().username;
 		var userId = Meteor.userId();
-		var userJokes = Jokes.find({ $or :[{userOne: userId}, {userTwo: userId}]}, {sort: {createdAt: -1}});
+		var userConnections = Connections.find({ $or :[{userOne: userId}, {userTwo: userId}]}, {sort: {createdAt: -1}});
 
-		return userJokes;
+		return userConnections;
 	}
 });
 

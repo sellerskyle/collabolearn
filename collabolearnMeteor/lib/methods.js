@@ -155,12 +155,10 @@ if (Meteor.isServer) {
 				throw new Meteor.Error('not authorized');
 				return false;
 			} else {
-				var username = Meteor.user().username;
 
 				Connections.insert({
 					userOne: userOne,
 					userTwo: userTwo,
-					author: username,
 					createdAt: new Date(),
 					messages: [],
 					meetUpLocations: [],

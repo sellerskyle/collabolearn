@@ -374,6 +374,37 @@ Meteor.startup(function() {
       console.log("User Database Seeded! Now get to work! :)");
       console.log("Jokes Database Seeded! Isn't that nice?! :P");
 
+
+      Connections.insert({
+        userOne: user0Id,
+        userTwo: user1Id,
+        createdAt: new Date(),
+        messages: [],
+        meetUpLocations: [],
+        meetUpTimes: [], 
+      });
+
+      Connections.insert({
+        userOne: user0Id,
+        userTwo: user2Id,
+        createdAt: new Date(),
+        messages: [],
+        meetUpLocations: [],
+        meetUpTimes: [], 
+      });
+
+      Connections.insert({
+        userOne: user0Id,
+        userTwo: user3Id,
+        createdAt: new Date(),
+        messages: [],
+        meetUpLocations: [],
+        meetUpTimes: [], 
+      });
+
+      console.log("Added Connections");
+
+
   }
 
 });
